@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h2>Add New Task</h2>
+        <form id="task-form">
+            <input type="text" id="project-input" placeholder="Project/Site" required>
+            <input type="text" id="client-input" placeholder="Client" required>
+            <input type="text" id="work-input" placeholder="Required Work" required>
+            <input type="date" id="date-input" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+    <div class="main-content" id="main-content">
+        <button class="open-btn" id="open-btn">&#9776; Open Sidebar</button>
+        <h1>To-Do List</h1>
+        <div id="flight-strips-container"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

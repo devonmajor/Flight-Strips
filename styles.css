@@ -1,0 +1,288 @@
+/* Modern Aesthetic Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background for a clean look */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    line-height: 1.6;
+}
+
+.sidebar {
+    width: 300px;
+    background: #ffffff; /* White background */
+    color: #333; /* Dark text */
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #333; /* Dark text */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.sidebar .close-btn {
+    background: none;
+    border: none;
+    color: #333; /* Dark text */
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.sidebar #task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar #task-form input {
+    padding: 10px;
+    font-size: 16px;
+    background: #f9f9f9; /* Light input background */
+    color: #333; /* Dark text */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar #task-form input::placeholder {
+    color: #999; /* Placeholder text */
+}
+
+.sidebar #task-form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.sidebar #task-form button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 300px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    background: #ffffff; /* White background */
+}
+
+.main-content.sidebar-closed {
+    margin-left: 0;
+}
+
+.main-content .open-btn {
+    background: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.main-content .open-btn:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Hide the ghost element during drag-and-drop */
+.sortable-ghost {
+    opacity: 0 !important;
+}
+
+/* Flight Strip Styles */
+.flight-strip {
+    background: #ffffff; /* White background */
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid #007bff; /* Blue accent border */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #333; /* Dark text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.flight-strip .details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.flight-strip .details span {
+    font-size: 14px;
+    color: #333; /* Dark text */
+    font-family: 'Inter', sans-serif;
+}
+
+.flight-strip .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.flight-strip .actions button {
+    background: #dc3545; /* Red button */
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.flight-strip .actions button.edit {
+    background: #ffc107; /* Yellow button */
+}
+
+.flight-strip .actions button:hover {
+    opacity: 0.9; /* Slight fade on hover */
+}
+
+.flight-strip .toggle-subtasks {
+    background: none;
+    border: none;
+    color: #007bff; /* Blue text */
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+.flight-strip .subtasks {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9; /* Light background */
+    border-top: 1px solid #ddd; /* Light border */
+    border-radius: 6px; /* Rounded corners */
+}
+
+.flight-strip .subtasks.visible {
+    display: block;
+}
+
+.flight-strip .subtasks .add-subtask {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.flight-strip .subtasks .add-subtask input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    background: #ffffff; /* White background */
+    color: #333; /* Dark text */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+}
+
+.flight-strip .subtasks .add-subtask button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px; /* Rounded corners */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.flight-strip .subtasks .add-subtask button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+.flight-strip .subtasks .subtask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.flight-strip .subtasks .subtask input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.flight-strip .subtasks .subtask.completed span {
+    text-decoration: line-through;
+    color: #999; /* Gray text for completed subtasks */
+}
+
+.flight-strip .subtasks .completion {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333; /* Dark text */
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Color-coded flight strips */
+.flight-strip.green {
+    border-left-color: #28a745; /* Green accent border */
+}
+
+.flight-strip.yellow {
+    border-left-color: #ffc107; /* Yellow accent border */
+}
+
+.flight-strip.orange {
+    border-left-color: #fd7e14; /* Orange accent border */
+}
+
+.flight-strip.red {
+    border-left-color: #dc3545; /* Red accent border */
+}
+
+/* Container and Heading Styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff; /* White background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 12px; /* Rounded corners */
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark text */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Hide the Open Sidebar button when the sidebar is open */
+.main-content:not(.sidebar-closed) .open-btn {
+    display: none;
+}
